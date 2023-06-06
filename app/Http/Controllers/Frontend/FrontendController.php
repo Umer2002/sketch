@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FrontendController extends Controller
 {
@@ -44,4 +45,25 @@ class FrontendController extends Controller
         // dd('good');
         return view('frontend.contact');
     }
+
+    // Add Contact
+    public function add_contact(Request $request)
+    {
+    //    dd($request->all());
+       $add_contact = new Contact;
+       $add_contact->name = $request->name;
+       $add_contact->email = $request->email;
+       $add_contact->message = $request->message;
+       $add_contact->phone = $request->phone;
+
+       if ($add_contact->save()) {
+        toastr()->success('Your Message has been send Successfully Some one will Contact you shortly Thanks For Contacting!');
+        return back();
+       }else {
+        toastr()->error('An error has occurred please try again later.');
+        return back();
+       }
+
+    }
+    // End
 }

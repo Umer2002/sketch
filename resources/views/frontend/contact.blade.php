@@ -38,9 +38,8 @@
 
                         <h4 class="extra-title mb-50">Get In Touch.</h4>
 
-                        <form id="contact-form" method="post" action="https://www.trinitygaming.in/contact.php">
-
-                            <div class="messages"></div>
+                        <form action="{{ route('add_contact') }}"  method="post">
+                            @csrf
 
                             <div class="controls">
 
@@ -51,6 +50,11 @@
 
                                 <div class="form-group">
                                     <input id="form_email" type="email" name="email" placeholder="Email"
+                                        required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="form_email" type="number" name="phone" placeholder="Phone Number"
                                         required="required">
                                 </div>
 
@@ -77,16 +81,16 @@
 
                         <div class="social mt-50">
 
-                            <a href="https://www.facebook.com/Trinitygamingindia" class="icon">
+                            <a href="#" class="icon">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com/trinitygaming.in" class="icon">
+                            <a href="#" class="icon">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCpIQwX4Ohu5qWTuejt4S3dg" class="icon">
+                            <a href="#" class="icon">
                                 <i class="fab fa-youtube"></i>
                             </a>
-                            <a href="https://discord.gg/trinitygamingindia" class="icon">
+                            <a href="#" class="icon">
                                 <i class="fab fa-discord"></i>
                             </a>
                         </div>
