@@ -24,12 +24,14 @@ class AdminMiddleware
             }
             else
             {
-                return redirect('/home')->with('status','Access Denied! as you are not as admin');
+                toastr()->success('Login Successfully!');
+                return redirect('Dashboard');
             }
         }
         else
         {
-            return redirect('/home')->with('status','Please Login First');
+            toastr()->error('An error has occurred Please Login First.');
+            return back();
         }
     }
 }

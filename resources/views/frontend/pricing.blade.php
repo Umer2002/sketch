@@ -92,18 +92,19 @@ background: linear-gradient( right, #a7394b, #7314c7,#2b5ac0); /* background: ur
 
 
 
+
     <section class="main-enterprice-box" style="margin-top: 90px;">
+        @foreach ($pricing as $price)
+
         <div class="enterprice-box" style="height:auto;">
 
-            <h4>Starter Plan</h4>
-            <h6 class="mt-5"><sup>$</sup>0<span> / month</span></h6>
+            <h4>{{ $price->name }}</h4>
+            <h6 class="mt-5"><sup>$</sup>{{ $price->price }}<span> / month</span></h6>
 
             <ul class="mt-5">
                 <p>See what it’s all about with a free plan</p>
-                <li style="list-style:circle"><span>Vizcom studio features</span></li>
-                <li style="list-style:circle"><span>Unlimited files</span></li>
-                <li style="list-style:circle"><span>Unlimited renderings</span></li>
-                <li style="list-style:circle"><span>Community support</span></li>
+                
+                <p>{{ $price->plan }}</p>
 
             </ul>
             <br><br><br><br><br><br>
@@ -111,44 +112,10 @@ background: linear-gradient( right, #a7394b, #7314c7,#2b5ac0); /* background: ur
 
         </div>
 
-        <div class="enterprice-box" style="height:auto;">
+        @endforeach
 
-            <h4 class="mt-5">Professional</h4>
 
-            <h6><sup>$</sup>49<span> / month</span></h6>
 
-            <ul class="mt-5">
-                <p>See what it’s all about with a free plan</p>
-                <li style="list-style:circle"> <span>Vizcom studio features</span></li>
-                <li style="list-style:circle"> <span>Unlimited files</span></li>
-                <li style="list-style:circle"> <span>Unlimited renderings</span></li>
-                <li style="list-style:circle"> <span>Community support</span></li>
-
-            </ul>
-            <br><br><br><br><br><br>
-            <div class="text-center"><a href="#" class="buy-btn btn btn-primary">Get Started</a></div>
-
-        </div>
-
-        <div class="enterprice-box" style="height:auto;">
-
-            <h4 class="mt-5">Enterprise</h4>
-
-            <h6 class="mt-5"><sup>$</sup>49<span> / month</span></h6>
-            <ul class="mt-5">
-                <p>Perfect for you and your team</p>
-                <li style="list-style:circle"> <span>Everything in Starte</span></li>
-                <li style="list-style:circle"> <span>Collaborate with your team</span></li>
-                <li style="list-style:circle"> <span>Unlimited exports</span></li>
-                <li style="list-style:circle"> <span>Manage user roles</span></li>
-                <li style="list-style:circle"> <span>Multiple image variations in one-click</span></li>
-                <li style="list-style:circle"> <span>AI model customizations</span></li>
-                <li style="list-style:circle"> <span>Access to topic-specific webinars</span></li>
-                <li style="list-style:circle"> <span>Priority support from our team</span></li>
-            </ul>
-            <div class="text-center"><a href="#" class="buy-btn btn btn-primary">Try Free For 30 Days</a></div>
-
-        </div>
     </section>
 
     <section class="container mt-5" style="margin-top: 90px !important;">

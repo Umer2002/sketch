@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fg-link" href="{{ route('pricing') }}">Pricing</a>
+                    <a class="nav-link fg-link" href="{{ route('pricing_show') }}">Pricing</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://discord.com/invite/5qqzBcVv58">Cummunity</a>
@@ -31,7 +31,7 @@
                     <a class="nav-link" href="{{ route('enterprice') }}">Enterprice</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                    <a class="nav-link" href="{{ route('contact_us') }}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-warning" href="{{ route('login') }}">Get Started</a>

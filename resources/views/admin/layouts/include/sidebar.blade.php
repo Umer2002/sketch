@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" style="background-color: #000; border:1px solid #fff;">
      
     <div class="sidebar-wrapper">
       <div class="logo">
@@ -31,6 +31,12 @@
           </a>
         </li>
 
+         <li>
+          <a href="{{ route('admin.pricing') }}">
+            <i class="tim-icons icon-bell-55"></i>
+            <p>Pricing</p>
+          </a>
+        </li>
        
 
         {{-- <li>
@@ -40,12 +46,7 @@
           </a>
         </li> --}}
 
-        {{-- <li>
-          <a href="./notifications.html">
-            <i class="tim-icons icon-bell-55"></i>
-            <p>Notifications</p>
-          </a>
-        </li> --}}
+       
 
         {{-- <li>
           <a href="./tables.html">

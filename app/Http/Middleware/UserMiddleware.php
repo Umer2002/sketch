@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserMiddleware
@@ -24,12 +25,14 @@ class UserMiddleware
             }
             else
             {
-                return redirect('/home')->with('status','Access Denied! as you are not as user');
+                toastr()->success('Login Successfully!');
+                return redirect('User_Dashboard');
             }
         }
         else
         {
-            return redirect('/home')->with('status','Please Login First');
+            toastr()->error('An error has occurred Please Login First.');
+            return back();
         }
     }
 }
