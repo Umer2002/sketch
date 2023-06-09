@@ -20,13 +20,13 @@ Auth::routes();
 // Frontend Routes
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('index');
 
-Route::get('Pricing', [App\Http\Controllers\Frontend\FrontendController::class, 'pricing'])->name('pricing');
+Route::get('Pricing_show', [App\Http\Controllers\Frontend\FrontendController::class, 'pricing_show'])->name('pricing_show');
 
 Route::get('Blog', [App\Http\Controllers\Frontend\FrontendController::class, 'blog'])->name('blog');
 
 Route::get('Enterprice', [App\Http\Controllers\Frontend\FrontendController::class, 'enterprice'])->name('enterprice');
 
-Route::get('Contact', [App\Http\Controllers\Frontend\FrontendController::class, 'contact'])->name('contact');
+Route::get('contact_us', [App\Http\Controllers\Frontend\FrontendController::class, 'contact_us'])->name('contact_us');
 
 Route::post('Add_Contact', [App\Http\Controllers\Frontend\FrontendController::class, 'add_contact'])->name('add_contact');
 // End
@@ -37,9 +37,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // User Routes
 Route::middleware(['auth', 'User'])->group(function () {
-    Route::get('User', [App\Http\Controllers\User\UserController::class, 'dashboard'])->name('user.Dashboard');
-});
+    // User Dashboard Routes
+    Route::get('User_Dashboard', [App\Http\Controllers\User\UserController::class, 'dashboard'])->name('user.Dashboard');
+    // End
+    // User Profile Routes
+    Route::get('User_Profile', [App\Http\Controllers\User\UserController::class, 'user_profile'])->name('user.user_profile');
+    Route::post('Edit_User_Profile', [App\Http\Controllers\User\UserController::class, 'edit_user_profile'])->name('user.edit_user_profile');
+    // End
 
+    // Company Routes
+    Route::post('Add_Company', [App\Http\Controllers\User\Company\CompanyController::class, 'add_company'])->name('user.add_company');
+    // End
+});
+// End
 
 // Admin Routes
 Route::group(['middleware' => ['auth','Admin']], function () {
@@ -48,8 +58,17 @@ Route::group(['middleware' => ['auth','Admin']], function () {
     Route::get('Dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.dashboard');
     // End
 
+    // profile Routes
+    Route::get('Admin-Profile', [App\Http\Controllers\Admin\DashboardController::class, 'admin_profile'])->name('admin.admin_profile');
+
+    Route::post('Edit_Admin_Profile', [App\Http\Controllers\Admin\DashboardController::class, 'edit_admin_profile'])->name('admin.edit_admin_profile');
+    
+    // End
+
     // Contact Routes
     Route::get('Contact', [App\Http\Controllers\Admin\Contact\ContactController::class, 'contact'])->name('admin.contact');
+    Route::get('del_contact/{id}', [App\Http\Controllers\Admin\Contact\ContactController::class, 'del_contact'])->name('admin.del_contact');
+    Route::post('Edit_Contact', [App\Http\Controllers\Admin\Contact\ContactController::class, 'edit_contact'])->name('admin.edit_contact');
     // End
 
     // User Routes
@@ -57,6 +76,23 @@ Route::group(['middleware' => ['auth','Admin']], function () {
     Route::get('user_edit/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'user_edit'])->name('admin.user_edit');
     Route::post('Edit_User_Action', [App\Http\Controllers\Admin\User\UserController::class, 'edit_user_action'])->name('admin.edit_user_action');
     Route::get('Delete_User/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'delete_user'])->name('admin.delete_user');    
+    // End
+
+    // User Company Routes
+    Route::get('User_Company', [App\Http\Controllers\Admin\User\UserController::class, 'user_company'])->name('admin.user_company');
+    Route::get('delete_company/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'delete_company'])->name('admin.delete_company');
+    Route::post('company_edit', [App\Http\Controllers\Admin\User\UserController::class, 'company_edit'])->name('admin.company_edit');
+    
+    // End
+
+    // Pricing Routes
+    Route::get('Pricing', [App\Http\Controllers\Admin\Pricing\PricingController::class, 'pricing'])->name('admin.pricing');
+    Route::get('Add_Pricing', [App\Http\Controllers\Admin\Pricing\PricingController::class, 'add_pricing'])->name('admin.add_pricing');
+    Route::post('Add_Pricing_Action', [App\Http\Controllers\Admin\Pricing\PricingController::class, 'add_pricing_action'])->name('admin.add_pricing_action');
+
+    Route::get('Delete_Price/{id}', [App\Http\Controllers\Admin\Pricing\PricingController::class, 'delete_price'])->name('admin.delete_price');
+
+    Route::post('Price_Edit', [App\Http\Controllers\Admin\Pricing\PricingController::class, 'price_edit'])->name('admin.price_edit');   
     // End
  
  });

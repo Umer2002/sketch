@@ -20,7 +20,7 @@
   <link href="{{ asset('/public/admin/assets/demo/demo.css') }}" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="" style="background-color:black;">
   <div class="wrapper">
 
    

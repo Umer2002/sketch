@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Contact;
+use App\Models\Pricing;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,10 +18,11 @@ class FrontendController extends Controller
     // End
 
     // Pricing Function 
-    public function pricing()
+    public function pricing_show()
     {
         // dd('good');
-        return view('frontend.pricing');
+        $pricing = Pricing::all();
+        return view('frontend.pricing',compact('pricing'));
     }
     // End
 
@@ -40,7 +42,7 @@ class FrontendController extends Controller
     }
 
     // Contact Function
-    public function contact()
+    public function contact_us()
     {
         // dd('good');
         return view('frontend.contact');
