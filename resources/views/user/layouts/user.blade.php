@@ -1,142 +1,233 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.3 | Nalika - Material Admin Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/public/user/img/favicon.ico') }}">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/bootstrap.min.css') }}">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/font-awesome.min.css') }}">
-	<!-- nalika Icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/nalika-icon.css') }}">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('/public/user/css/owl.theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('/public/user/css/owl.transitions.css') }}">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/animate.css') }}">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/normalize.css') }}">
-    <!-- meanmenu icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/meanmenu.min.css') }}">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/main.css') }}">
-    <!-- morrisjs CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/morrisjs/morris.css') }}">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
-    <!-- metisMenu CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/metisMenu/metisMenu.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/public/user/css/metisMenu/metisMenu-vertical.css') }}">
-    <!-- calendar CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/calendar/fullcalendar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/public/user/css/calendar/fullcalendar.print.min.css') }}">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/style.css') }}">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="{{ asset('/public/user/css/responsive.css') }}">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/public/admin/assets/img/apple-icon.png')}}">
+  <link rel="icon" type="image/png" href="{{ asset('/public/admin/assets/img/favicon.png') }}">
+  <title>
+    Black Dashboard by Creative Tim
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{{ asset('/public/admin/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="{{ asset('/public/admin/assets/css/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{{ asset('/public/admin/assets/demo/demo.css') }}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="" style="background-color:#151517;">
+  <div class="wrapper">
 
-    <div class="left-sidebar-pro">
-       @include('user.layouts.include.sidebar')
+    {{-- Sidebar --}}
+    @include('user.layouts.include.sidebar')
+    {{-- End --}}
+
+    <div class="main-panel">
+      <!-- Navbar -->
+      @include('user.layouts.include.nav')
+      <!-- End Navbar -->
+
+      
+      {{-- Content --}}
+      @yield('content')
+      {{-- End --}}
+
+      {{-- Footer --}}
+      @include('user.layouts.include.footer')
+      {{-- End --}}
+
     </div>
 
-    <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
-        @include('user.layouts.include.nav')
+  </div>
 
-      <div style="margin-top: 100px">
-       @yield('content')
-      </div>
-
-        {{-- @include('user.layouts.include.footer') --}}
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-info" data-color="blue"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <li class="adjustments-line text-center color-change">
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+        </li>
+        <li class="button-container">
+          <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
+          <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
+            Documentation
+          </a>
+        </li>
+        <li class="header-title">Thank you for 95 shares!</li>
+        <li class="button-container text-center">
+          <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
+          <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
+          <br>
+          <br>
+          <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <!-- jquery
-		============================================ -->
-    <script src="{{ asset('/public/user/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <!-- bootstrap JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/bootstrap.min.js') }}"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/wow.min.js') }}"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/jquery-price-slider.js') }}"></script>
-    <!-- meanmenu JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/jquery.meanmenu.js') }}"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/owl.carousel.min.js') }}"></script>
-    <!-- sticky JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/jquery.sticky.js') }}"></script>
-    <!-- scrollUp JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/jquery.scrollUp.min.js') }}"></script>
-    <!-- mCustomScrollbar JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/scrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/scrollbar/mCustomScrollbar-active.js') }}"></script>
-    <!-- metisMenu JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/metisMenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/metisMenu/metisMenu-active.js') }}"></script>
-    <!-- morrisjs JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/sparkline/jquery.charts-sparkline.js') }}"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/calendar/moment.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/calendar/fullcalendar.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/calendar/fullcalendar-active.js') }}"></script>
-	<!-- float JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/jquery.flot.resize.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/jquery.flot.pie.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/jquery.flot.orderBars.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/curvedLines.js') }}"></script>
-    <script src="{{ asset('/public/user/js/flot/flot-active.js') }}"></script>
-    <!-- plugins JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/plugins.js') }}"></script>
-    <!-- main JS
-		============================================ -->
-    <script src="{{ asset('/public/user/js/main.js') }}"></script>
+  <!--   Core JS Files   -->
+  <script src="{{asset('/public/admin/assets/js/core/jquery.min.js')}}"></script>
+  <script src="{{asset('/public/admin/assets/js/core/popper.min.js')}}"></script>
+  <script src="{{asset('/public/admin/assets/js/core/bootstrap.min.js')}}"></script>
+  <script src="{{asset('/public/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="{{asset('/public/admin/assets/js/plugins/chartjs.min.js')}}"></script>
+  <!--  Notifications Plugin    -->
+  <script src="{{asset('/public/admin/assets/js/plugins/bootstrap-notify.js')}}"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{{asset('/public/admin/assets/js/black-dashboard.min.js?v=1.0.0')}}"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="{{asset('/public/admin/assets/demo/demo.js')}}"></script>
+
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+  </script>
 </body>
 
 </html>

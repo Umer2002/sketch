@@ -1,11 +1,28 @@
-<div class="footer-copyright-area">
+<footer class="footer">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer-copy-right">
-                    <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
-                </div>
-            </div>
-        </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            Creative Tim
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            Blog
+          </a>
+        </li>
+      </ul>
+      <div class="copyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>2018 made with <i class="tim-icons icon-heart-2"></i> by
+        <a href="javascript:void(0)" >Spark IT</a>.
+      </div>
     </div>
-</div>
+  </footer>

@@ -1,4 +1,4 @@
-<div class="sidebar" style="background-color: #000; border:1px solid #fff;">
+<div class="sidebar" style="background-color: #151517; ">
      
     <div class="sidebar-wrapper">
       <div class="logo">
@@ -21,6 +21,13 @@
           <a href="{{ route('admin.user') }}">
             <i class="tim-icons icon-single-02"></i>
             <p>User</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="{{ route('admin.user_company') }}">
+            <i class="tim-icons icon-single-02"></i>
+            <p>User Company</p>
           </a>
         </li>
 

@@ -42,8 +42,12 @@ Route::middleware(['auth', 'User'])->group(function () {
     // End
     // User Profile Routes
     Route::get('User_Profile', [App\Http\Controllers\User\UserController::class, 'user_profile'])->name('user.user_profile');
+    Route::post('Edit_User_Profile', [App\Http\Controllers\User\UserController::class, 'edit_user_profile'])->name('user.edit_user_profile');
     // End
-    
+
+    // Company Routes
+    Route::post('Add_Company', [App\Http\Controllers\User\Company\CompanyController::class, 'add_company'])->name('user.add_company');
+    // End
 });
 // End
 
@@ -63,6 +67,8 @@ Route::group(['middleware' => ['auth','Admin']], function () {
 
     // Contact Routes
     Route::get('Contact', [App\Http\Controllers\Admin\Contact\ContactController::class, 'contact'])->name('admin.contact');
+    Route::get('del_contact/{id}', [App\Http\Controllers\Admin\Contact\ContactController::class, 'del_contact'])->name('admin.del_contact');
+    Route::post('Edit_Contact', [App\Http\Controllers\Admin\Contact\ContactController::class, 'edit_contact'])->name('admin.edit_contact');
     // End
 
     // User Routes
@@ -70,6 +76,13 @@ Route::group(['middleware' => ['auth','Admin']], function () {
     Route::get('user_edit/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'user_edit'])->name('admin.user_edit');
     Route::post('Edit_User_Action', [App\Http\Controllers\Admin\User\UserController::class, 'edit_user_action'])->name('admin.edit_user_action');
     Route::get('Delete_User/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'delete_user'])->name('admin.delete_user');    
+    // End
+
+    // User Company Routes
+    Route::get('User_Company', [App\Http\Controllers\Admin\User\UserController::class, 'user_company'])->name('admin.user_company');
+    Route::get('delete_company/{id}', [App\Http\Controllers\Admin\User\UserController::class, 'delete_company'])->name('admin.delete_company');
+    Route::post('company_edit', [App\Http\Controllers\Admin\User\UserController::class, 'company_edit'])->name('admin.company_edit');
+    
     // End
 
     // Pricing Routes
