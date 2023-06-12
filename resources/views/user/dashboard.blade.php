@@ -8,7 +8,7 @@
             <h1>What's the name of your company or team?</h1>
             <p>This will be the home for all of your Vizcom work. Choose something that your team will recognize.You can always change this name later.</p>
         </div>
-        <form action="{{ route('user.add_company') }}" method="post">
+        <form action="{{ route('user.add_company') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <div class="row" style="">
@@ -21,6 +21,18 @@
                             aria-describedby="emailHelp" @if ($company == null)  value=""@else value="{{ $company->company_name }}"@endif >
 
                     </div>
+
+
+                    <div class="form-group">
+
+                        <img width="100px" height="100px" src="/public/Images/.{{ $company->image }}" alt="">
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color:#fff;" for="exampleInputEmail1">Image</label>
+
+                        <input style="border:1px solid gray; opacity:1; position:relative;" type="file" class="form-control" name="image">
+                    </div>
                 </div>
             </div>
             <div class="">
@@ -28,6 +40,8 @@
             </div>
                
         </form>
+
+        
     </div>
 
 </div>
